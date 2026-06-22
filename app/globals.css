@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff9ec;
+  --foreground: #1f2b3a;
+  --muted: #52606d;
+  --primary: #253241;
+  --primary-dark: #1f2b3a;
+  --secondary: #f3703f;
+  --accent: #ffd86f;
+  --border: #decdb6;
+  --surface: #ffffff;
+  --soft: #fff3d8;
+  --success: #3f6b45;
+  --error: #9e302d;
+  --brand-blue: #aee4f2;
+  --brand-red: #c93b32;
+  --brand-brown: #431713;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 6% 4%, rgba(243, 112, 63, 0.16), transparent 23rem),
+    radial-gradient(circle at 92% 18%, rgba(174, 228, 242, 0.55), transparent 25rem),
+    linear-gradient(180deg, #fff9ec 0%, #fffdf6 46%, #fff4dc 100%);
+  color: var(--foreground);
+  font-family: var(--font-hebrew), system-ui, sans-serif;
+  text-align: start;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(240, 111, 66, 0.24);
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--secondary);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.service-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.resource-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.brand-pattern {
+  background-image: url("/images/brand/speech-pattern-color.jpg");
+  background-size: 520px 520px;
+  background-position: center;
+}
+
+.banner-pattern-blue,
+.banner-pattern-cream,
+.banner-pattern-mixed,
+.banner-pattern-color {
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 520px 520px;
+}
+
+.banner-pattern-blue {
+  background-image: url("/images/brand/pattern-speech-blue.jpg");
+}
+
+.banner-pattern-cream {
+  background-image: url("/images/brand/pattern-speech-cream.jpg");
+}
+
+.banner-pattern-mixed {
+  background-image: url("/images/brand/pattern-speech-mixed.jpg");
+}
+
+.banner-pattern-color {
+  background-image: url("/images/brand/speech-pattern-color.jpg");
+}
+
+.banner-wash-sky {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(174, 228, 242, 0.68), transparent 22rem),
+    linear-gradient(115deg, rgba(255, 249, 236, 0.82) 0%, rgba(255, 255, 255, 0.58) 48%, rgba(174, 228, 242, 0.5) 100%);
+}
+
+.banner-wash-sun {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(243, 112, 63, 0.16), transparent 20rem),
+    linear-gradient(135deg, rgba(255, 248, 228, 0.78) 0%, rgba(255, 255, 255, 0.56) 48%, rgba(255, 216, 111, 0.34) 100%);
+}
+
+.banner-wash-clean {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.banner-header {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(174, 228, 242, 0.5), transparent 22rem),
+    linear-gradient(135deg, #fff9ec 0%, #fffdf8 48%, #f0fbfd 100%);
+}
+
+.banner-header::before {
+  position: absolute;
+  inset: 0;
+  background-image: var(--banner-pattern, url("/images/brand/pattern-speech-cream.jpg"));
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 520px 520px;
+  content: "";
+  opacity: var(--banner-pattern-opacity, 0.2);
+}
+
+.banner-header > * {
+  position: relative;
+}
+
+.banner-header-sky {
+  --banner-pattern: url("/images/brand/pattern-speech-blue.jpg");
+}
+
+.banner-header-cream {
+  --banner-pattern: url("/images/brand/pattern-speech-cream.jpg");
+}
+
+.banner-header-mixed {
+  --banner-pattern: url("/images/brand/pattern-speech-mixed.jpg");
+  --banner-pattern-opacity: 0.14;
+}
+
+.brand-soft-shadow {
+  box-shadow: 0 26px 80px rgba(243, 112, 63, 0.18);
+}
+
+.section-dark {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(243, 112, 63, 0.22), transparent 20rem),
+    radial-gradient(circle at 88% 10%, rgba(174, 228, 242, 0.72), transparent 24rem),
+    linear-gradient(135deg, #fff3cf 0%, #ffffff 45%, #d9f5fb 100%);
+  color: var(--foreground);
+}
+
+.section-title {
+  color: var(--primary-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
